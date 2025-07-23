@@ -1,4 +1,3 @@
-import ThreeCube from '../components/ThreeCube';
 import Blobs from '../components/Blobs';
 
 export default function Home() {

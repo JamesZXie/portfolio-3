@@ -4,14 +4,16 @@ import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { MarchingCubes } from '@react-three/drei';
 
-function BlobsAnimation({
+function BlobsLayer({
   resolution = 50,
   speed = 0.3,
   numBalls = 10,
   mouse,
+  color = '#ffffff',
+  wireframe = true,
+  repelOnHover = false,
 }) {
   const ref = useRef();
-  // Store current positions for smooth animation
   const positions = useRef(
     Array(2)
       .fill()
@@ -24,7 +26,6 @@ function BlobsAnimation({
       ref.current.reset();
       for (let line = 0; line < 2; line++) {
         for (let i = 0; i < numBalls; i++) {
-          // Target X shape position
           const alpha = i / (numBalls - 1);
           let x, y;
           if (line === 0) {
@@ -39,26 +40,23 @@ function BlobsAnimation({
           const fy = y + 0.02 * Math.cos(t * 1.1 + phase * 1.3);
           const fz = 0.5 + 0.015 * Math.sin(t * 1.3 + phase * 1.7);
 
-          // Repel from mouse (if present)
           let px = fx,
             py = fy,
             pz = fz;
-          if (mouse.current) {
+
+          if (repelOnHover && mouse.current) {
             const [mx, my] = mouse.current;
-            // Mouse is in [0,1] range for both x and y
             const dx = fx - mx;
             const dy = fy - my;
             const dist = Math.sqrt(dx * dx + dy * dy);
             const repelRadius = 0.18;
             if (dist < repelRadius) {
-              // Repel with smooth falloff
               const strength = 0.18 * (1 - dist / repelRadius);
               px += (dx / (dist + 0.001)) * strength;
               py += (dy / (dist + 0.001)) * strength;
             }
           }
 
-          // Smoothly interpolate to new position
           const prev = positions.current[line][i];
           const lerp = (a, b, t) => a + (b - a) * 0.18;
           const nx = lerp(prev[0], px, 0.18);
@@ -79,22 +77,21 @@ function BlobsAnimation({
       enableUvs={false}
       enableColors={false}
     >
-      <meshStandardMaterial color={'#fff'} wireframe={true} />
+      <meshStandardMaterial color={color} wireframe={wireframe} />
     </MarchingCubes>
   );
 }
 
 export default function Blobs() {
-  // Track mouse in normalized [0,1] coordinates relative to canvas
   const mouse = useRef(null);
 
   function handlePointerMove(e) {
     const rect = e.target.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width;
-    // Flip y so 0 is bottom, 1 is top
     const y = 1 - (e.clientY - rect.top) / rect.height;
     mouse.current = [x, y];
   }
+
   function handlePointerOut() {
     mouse.current = null;
   }
@@ -117,7 +114,18 @@ export default function Blobs() {
       >
         <ambientLight intensity={0.8} />
         <directionalLight position={[2, 2, 2]} intensity={0.8} />
-        <BlobsAnimation mouse={mouse} />
+        <BlobsLayer
+          mouse={mouse}
+          color={'#ffffff'}
+          wireframe={true}
+          repelOnHover={false}
+        />
+        <BlobsLayer
+          mouse={mouse}
+          color={'#ff6600'}
+          wireframe={false}
+          repelOnHover={true}
+        />
       </Canvas>
     </div>
   );
