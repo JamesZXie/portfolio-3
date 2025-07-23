@@ -1,10 +1,16 @@
-import Image from 'next/image';
 import ThreeCube from '../components/ThreeCube';
+import Blobs from '../components/Blobs';
 
 export default function Home() {
   return (
-    <div className='font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20'>
-      <ThreeCube />
+    <div className='relative min-h-screen w-full flex items-center justify-center'>
+      <div className='flex flex-col items-center justify-center gap-2 z-0'>
+        <h1 className='text-white text-[144px] font-sans leading-none'>
+          JAMES XIE
+        </h1>
+        <h4 className='font-mono text-4xl text-right w-full'>Design & Code</h4>
+      </div>
+      <Blobs />
     </div>
   );
 }
