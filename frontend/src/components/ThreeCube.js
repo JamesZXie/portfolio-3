@@ -9,7 +9,6 @@ export default function ThreeCube() {
   useEffect(() => {
     // Scene setup
     const scene = new THREE.Scene();
-    // No background color for transparency
 
     // Camera setup
     const camera = new THREE.PerspectiveCamera(
@@ -18,7 +17,7 @@ export default function ThreeCube() {
       0.1,
       1000
     );
-    camera.position.z = 2;
+    camera.position.z = 4;
 
     // Renderer setup
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -34,16 +33,37 @@ export default function ThreeCube() {
     };
     window.addEventListener('resize', handleResize);
 
-    // Cube setup
-    const geometry = new THREE.BoxGeometry();
+    // X shape setup
     const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+
+    // Use CapsuleGeometry if available, otherwise use CylinderGeometry as fallback
+    let barGeometry;
+    if (THREE.CapsuleGeometry) {
+      barGeometry = new THREE.CapsuleGeometry(0.15, 1.2, 16, 32); // radius, length, cap segments, radial segments
+    } else {
+      barGeometry = new THREE.CylinderGeometry(0.15, 0.15, 1.5, 32);
+    }
+
+    // First bar (\) - more obtuse angle
+    const bar1 = new THREE.Mesh(barGeometry, material);
+    bar1.rotation.z = Math.PI / 4.5; // ~40 degrees, more open than 45
+
+    // Second bar (/) - more obtuse angle
+    const bar2 = new THREE.Mesh(barGeometry, material);
+    bar2.rotation.z = -Math.PI / 4.5; // ~-40 degrees
+
+    // Group the bars
+    const xGroup = new THREE.Group();
+    xGroup.add(bar1);
+    xGroup.add(bar2);
+    scene.add(xGroup);
 
     // Light
-    const light = new THREE.DirectionalLight(0xffffff, 1);
+    const light = new THREE.DirectionalLight(0xffffff, 1.2);
     light.position.set(2, 2, 5);
     scene.add(light);
+    const ambient = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambient);
 
     // Mouse interaction state
     let targetRotationX = 0;
@@ -64,8 +84,8 @@ export default function ThreeCube() {
     // Animation loop (no auto-rotation)
     let frameId;
     const animate = () => {
-      cube.rotation.x += (targetRotationX - cube.rotation.x) * 0.1;
-      cube.rotation.y += (targetRotationY - cube.rotation.y) * 0.1;
+      xGroup.rotation.x += (targetRotationX - xGroup.rotation.x) * 0.1;
+      xGroup.rotation.y += (targetRotationY - xGroup.rotation.y) * 0.1;
       renderer.render(scene, camera);
       frameId = requestAnimationFrame(animate);
     };
