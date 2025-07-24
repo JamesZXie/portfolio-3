@@ -2,22 +2,27 @@
 
 import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { MarchingCubes } from '@react-three/drei';
+import {
+  MarchingCubes,
+  MeshTransmissionMaterial,
+  Environment,
+} from '@react-three/drei';
 
 function BlobsLayer({
-  resolution = 50,
+  resolution = 64,
   speed = 0.3,
   numBalls = 15,
   mouse,
   color = '#ffffff',
   wireframe = true,
   repelOnHover = false,
+  glass = false,
 }) {
   const ref = useRef();
   const positions = useRef(
     Array(2)
       .fill()
-      .map(() => Array(numBalls).fill([0.25, 0.25, 0.25]))
+      .map(() => Array(numBalls).fill([0.5, 0.5, 0.5]))
   );
 
   useFrame(({ clock }) => {
@@ -77,7 +82,18 @@ function BlobsLayer({
       enableUvs={false}
       enableColors={false}
     >
-      <meshStandardMaterial color={color} wireframe={wireframe} />
+      {glass ? (
+        <MeshTransmissionMaterial
+          transmission={1}
+          roughness={0}
+          thickness={0.4}
+          ior={1.45}
+          chromaticAberration={0.015}
+          backside={false}
+        />
+      ) : (
+        <meshStandardMaterial color={color} wireframe={wireframe} />
+      )}
     </MarchingCubes>
   );
 }
@@ -99,7 +115,7 @@ export default function Blobs() {
   return (
     <div
       style={{
-        position: 'fixed',
+        position: 'absolute',
         inset: 0,
         width: '100vw',
         height: '100vh',
@@ -112,17 +128,20 @@ export default function Blobs() {
         onPointerMove={handlePointerMove}
         onPointerOut={handlePointerOut}
       >
-        <ambientLight intensity={0.8} />
-        <directionalLight position={[2, 2, 2]} intensity={0.8} />
-        <BlobsLayer
+        <ambientLight intensity={0.5} />
+        <pointLight position={[2, 2, 2]} intensity={1.2} color={'#6be5ff'} />
+        <pointLight position={[-2, -2, 2]} intensity={1.1} color={'#f957bc'} />
+        <pointLight position={[0, 2, -2]} intensity={0.9} color={'#a66cff'} />
+        <Environment preset='city' />
+        {/* <BlobsLayer
           mouse={mouse}
           color={'#ffffff'}
           wireframe={true}
-          repelOnHover={false}
-        />
+          repelOnHover={true}
+        /> */}
         <BlobsLayer
           mouse={mouse}
-          color={'#ff6600'}
+          glass={true}
           wireframe={false}
           repelOnHover={true}
         />
