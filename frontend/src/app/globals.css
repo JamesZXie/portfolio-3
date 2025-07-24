@@ -10,6 +10,21 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --primary: var(--color-white);
+  --primary-hover: var(--color-ivory);
+  --secondary: var(--color-fog);
+  --secondary-hover: var(--color-pewter);
+  --accent: var(--color-sunset);
+  --accent-hover: var(--color-dawn);
+  --background: var(--color-jet);
+  --background-hover: var(--color-umbra);
+  --foreground: var(--color-dove);
+  --foreground-hover: var(--color-white);
+  --card: var(--color-charcoal);
+  --border: var(--color-umbra);
+  --input: var(--color-fog);
+  --scroll-track-color: var(--color-charcoal);
+  --scroll-thumb-color: var(--color-jet);
 }
 
 body {

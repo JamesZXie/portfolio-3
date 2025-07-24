@@ -7,7 +7,7 @@ import { MarchingCubes } from '@react-three/drei';
 function BlobsLayer({
   resolution = 50,
   speed = 0.3,
-  numBalls = 15,
+  numBalls = 10,
   mouse,
   color = '#ffffff',
   wireframe = true,
@@ -17,7 +17,7 @@ function BlobsLayer({
   const positions = useRef(
     Array(2)
       .fill()
-      .map(() => Array(numBalls).fill([0.25, 0.25, 0.25]))
+      .map(() => Array(numBalls).fill([0.5, 0.5, 0.5]))
   );
 
   useFrame(({ clock }) => {

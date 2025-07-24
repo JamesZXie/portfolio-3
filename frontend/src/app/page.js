@@ -7,7 +7,7 @@ export default function Home() {
         <h1 className='text-white text-[144px] font-sans leading-none'>
           JAMES XIE
         </h1>
-        <h4 className='font-mono text-4xl text-right w-full'>Design & Code</h4>
+        <h4 className='font-mono text-4xl text-right w-full'>DESIGN & CODE</h4>
       </div>
       <Blobs />
     </div>
