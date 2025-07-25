@@ -139,6 +139,13 @@ export default function Blobs() {
           wireframe={true}
           repelOnHover={true}
         /> */}
+        <pointLight
+          position={[0, 0, 0]}
+          intensity={1.5}
+          color={'#ffffff'}
+          distance={3}
+          decay={2}
+        />
         <BlobsLayer
           mouse={mouse}
           glass={true}
