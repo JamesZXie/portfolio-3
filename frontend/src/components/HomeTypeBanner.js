@@ -48,7 +48,7 @@ export default function HomeTypeBanner() {
     <div className='absolute inset-0 flex items-center justify-between w-full h-full pointer-events-none'>
       <div className='pl-8 md:pl-[32px] flex-1 flex items-center'>
         <h1
-          className='font-sans font-medium text-[clamp(1.5rem,4vw,48px)] text-[var(--secondary)] leading-tight select-none text-left whitespace-pre-line'
+          className='font-sans font-medium text-[clamp(1.5rem,4vw,64px)] text-[var(--secondary)] leading-tight select-none text-left whitespace-pre-line'
           style={{ wordBreak: 'break-word' }}
         >
           {leftDisplayed}
@@ -59,7 +59,7 @@ export default function HomeTypeBanner() {
       </div>
       <div className='pr-8 md:pr-[32px] flex-1 flex items-center justify-end'>
         <h1
-          className='font-sans font-medium text-[clamp(1.5rem,4vw,48px)] text-[var(--secondary)] leading-tight select-none text-right whitespace-pre-line'
+          className='font-sans font-medium text-[clamp(1.5rem,4vw,64px)] text-[var(--secondary)] leading-tight select-none text-right whitespace-pre-line'
           style={{ wordBreak: 'break-word' }}
         >
           {rightDisplayed}
