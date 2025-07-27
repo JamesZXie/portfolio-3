@@ -1,0 +1,75 @@
+'use client';
+
+import React from 'react';
+import ProjectCard from './ProjectCard';
+
+export default function Projects() {
+  return (
+    <div id='projects' className='w-full'>
+      <ProjectCard
+        tags={['WEB', 'ENTERPRISE', 'B2B']}
+        title={'DEPLOYABLE ARCHITECTURES'}
+        subtitle={'Packaged automation for deploying cloud environments'}
+        role={
+          'Design lead in cross-functional team of 12 reporting directly to CEO'
+        }
+        impact={[
+          '80% reduction in deployment cost',
+          '60% reduction in deployment time (so far)',
+          'MOD Award: recognized as top 1% of IBM designers',
+        ]}
+        video='DA_Demo'
+      >
+        0 to 1 automation suite conceptualized during a coffee chat with a
+        distinguished engineer. Led design and execution. Users are now able to
+        automatically deploy environments in 2 months, instead of burning cash
+        on consultants for half a year. Drove adoption to make it the #1
+        featured item on{' '}
+        <a
+          className='color-[var(--color-amber-500)]'
+          href='https://cloud.ibm.com/catalog#highlights'
+        >
+          the IBM Cloud Catalog.
+        </a>
+      </ProjectCard>
+      <ProjectCard
+        tags={['WEB', 'ENTERPRISE', 'B2B']}
+        title={'NETWORK SECURITY GROUPS'}
+        role={'Design lead on team with distinguished engineers, PM, and sales'}
+        impact={[
+          '5 min checkout form completion time',
+          '4 min time spent on debugging flow',
+          '11% UI adoption rate in first 3 months',
+        ]}
+      >
+        Led design on a 0 to 1 zero-trust network guardrails feature that cut
+        unauthorized access attempts 40%.
+      </ProjectCard>
+      <ProjectCard
+        tags={['WEB', 'ENTERPRISE', 'B2B']}
+        title={'CLOUD PLATFORM DISCOVERY'}
+        role={'Design lead on team with Sales, PM, and Marketing'}
+        impact={['20% increase in page traffic', 'Doubled median time-on-page']}
+      >
+        Led design on reimagining of the Power VS cloud platform discovery flow.
+        Created new visual illustrations, pushed the boundaries of the Carbon
+        design system. Began generating organic inbound leads, where previously
+        there were almost none.
+      </ProjectCard>
+      <ProjectCard
+        tags={['MOBILE', 'B2C', 'NONPROFIT']}
+        title={'CROWDSOURCING EMERGENCY RESCUE'}
+        role={'Design and development lead partnering with an Austin nonprofit'}
+        impact={[
+          '312 volunteers recruited',
+          '430 rescue and aid missions',
+          '$1.5 million raised',
+        ]}
+      >
+        Launched a crisis-response web app in 72 hrs that mobilized 312
+        volunteers, coordinated 430 rescue runs, and drove $1.5 M in donations
+        during the 2021 Texas winter storm.
+      </ProjectCard>
+    </div>
+  );
+}

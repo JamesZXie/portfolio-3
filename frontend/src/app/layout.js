@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: 'JX Portfolio',
+  title: 'EXI',
   description: 'Design work by James Xie, a designer and developer.',
 };
 
