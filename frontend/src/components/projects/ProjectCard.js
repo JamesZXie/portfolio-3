@@ -11,9 +11,9 @@ export default function ProjectCard({
 }) {
   return (
     <div className='w-screen p-1 lg:p-8 box-border h-auto lg:h-screen min-h-screen'>
-      <div className='h-full w-full p-8 flex flex-col lg:flex-row gap-16'>
+      <div className='h-full w-full p-8 flex flex-col lg:flex-row gap-32'>
         {/* LEFT SECTION – text */}
-        <div className='flex-1 flex flex-col max-w-[550px]'>
+        <div className='flex-1 flex flex-col max-w-[550px] md:min-w-[440px]'>
           {/* Tags */}
           <div className='flex flex-wrap gap-2 mb-4'>
             {tags.map((tag, i) => (
@@ -55,17 +55,19 @@ export default function ProjectCard({
 
         {/* RIGHT SECTION – placeholder carousel */}
         {video ? (
-          <div className='flex-1 flex items-center justify-center bg-stone-800 text-white border border-[var(--secondary)] rounded-[35px] overflow-hidden lg:px-10 min-h-[300px]'>
-            <video
-              className='w-full h-full object-contain'
-              autoPlay
-              loop
-              muted
-              playsInline
-            >
-              <source src={`/${video}.mp4`} type='video/mp4' />
-              Your browser does not support the video tag.
-            </video>
+          <div className='inline-flex items-start justify-center overflow-hidden min-h-[300px] max-w-[1024px]'>
+            <div className='relative aspect-[963/764] bg-stone-800 text-white border border-[var(--secondary)] rounded-[35px] p-8  '>
+              <video
+                className='w-full h-full object-contain'
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src={`/${video}.mp4`} type='video/mp4' />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         ) : (
           <div>hi</div>

@@ -7,7 +7,7 @@ import ContactButton from './ContactButton';
 const LINKS = [
   { label: 'HOME', href: '#home', disabled: false },
   { label: 'PROJECTS', href: '#projects', disabled: false },
-  { label: 'ABOUT', href: '/about', disabled: false },
+  { label: 'ABOUT', href: '#about', disabled: true },
   { label: 'ART', href: '/art', disabled: true }, // disabled for now
 ];
 
