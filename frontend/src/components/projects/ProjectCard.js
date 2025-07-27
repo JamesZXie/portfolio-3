@@ -1,7 +1,5 @@
 'use client';
 
-import { CaretDoubleRight } from '@phosphor-icons/react/dist/icons/CaretDoubleRight';
-
 export default function ProjectCard({
   tags = [],
   title,
@@ -12,7 +10,7 @@ export default function ProjectCard({
   image,
 }) {
   return (
-    <div className='h-screen w-screen p-8 box-border'>
+    <div className='w-screen p-1 lg:p-8 box-border h-auto lg:h-screen min-h-screen'>
       <div className='h-full w-full p-8 flex flex-col lg:flex-row gap-16'>
         {/* LEFT SECTION – text */}
         <div className='flex-1 flex flex-col max-w-[550px]'>
@@ -57,7 +55,7 @@ export default function ProjectCard({
 
         {/* RIGHT SECTION – placeholder carousel */}
         {video ? (
-          <div className='flex-1 flex items-center justify-center bg-stone-800 text-white border border-[var(--secondary)] rounded-[35px] overflow-hidden px-10'>
+          <div className='flex-1 flex items-center justify-center bg-stone-800 text-white border border-[var(--secondary)] rounded-[35px] overflow-hidden lg:px-10 min-h-[300px]'>
             <video
               className='w-full h-full object-contain'
               autoPlay
