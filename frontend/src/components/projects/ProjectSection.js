@@ -41,6 +41,7 @@ export default function Projects() {
           '4 min time spent on debugging flow',
           '11% UI adoption rate in first 3 months',
         ]}
+        video='NSG_Demo'
       >
         Led design on a 0 to 1 zero-trust network guardrails feature that cut
         unauthorized access attempts 40%.
@@ -50,6 +51,7 @@ export default function Projects() {
         title={'CLOUD PLATFORM DISCOVERY'}
         role={'Design lead on team with Sales, PM, and Marketing'}
         impact={['20% increase in page traffic', 'Doubled median time-on-page']}
+        video='Overview_Demo'
       >
         Led design on reimagining of the Power VS cloud platform discovery flow.
         Created new visual illustrations, pushed the boundaries of the Carbon
