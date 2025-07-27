@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import ContactButton from './ContactButton';
 
 const LINKS = [
-  { label: 'HOME', href: '/' },
-  { label: 'PROJECTS', href: '/projects' },
+  { label: 'HOME', href: '#home' },
+  { label: 'PROJECTS', href: '#projects' },
   { label: 'ABOUT', href: '/about' },
   { label: 'RESUME', href: '/resume' },
   { label: 'ART', href: '/art' },
@@ -13,6 +14,8 @@ const LINKS = [
 
 export default function Navigation() {
   const [show, setShow] = useState(true);
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     function onScroll() {
@@ -21,6 +24,29 @@ export default function Navigation() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  const handleClick = (e, href) => {
+    if (!href.startsWith('#')) return; // normal links handled by browser
+
+    e.preventDefault();
+
+    const scrollToTarget = () => {
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    if (pathname !== '/') {
+      // If not on homepage, go home first, then scroll
+      router.push('/');
+
+      // Wait until next tick to allow DOM to render
+      setTimeout(scrollToTarget, 400);
+    } else {
+      scrollToTarget();
+    }
+  };
 
   return (
     <nav
@@ -39,6 +65,7 @@ export default function Navigation() {
             <li key={link.href}>
               <a
                 href={link.href}
+                onClick={(e) => handleClick(e, link.href)}
                 className='relative font-mono text-[14px] text-[var(--primary)] px-2 py-1 transition-colors duration-150 group'
               >
                 {link.label}
