@@ -59,6 +59,17 @@ export default function Projects() {
         there were almost none.
       </ProjectCard>
       <ProjectCard
+        tags={['IOT', 'DESIGN EMINENCE']}
+        title={'THE POWERGLOVE'}
+        role={'Design and robotics lead on art project team of 30'}
+        impact={['lots of fun']}
+        video='Powerglove_Demo'
+      >
+        Built a glove with flex sensors and an accelerometer, created an
+        internal API to interface with it and let a bunch of other IBMers use it
+        to interact with their own digital art.
+      </ProjectCard>
+      <ProjectCard
         tags={['MOBILE', 'B2C', 'NONPROFIT']}
         title={'CROWDSOURCING EMERGENCY RESCUE'}
         role={'Design and development lead partnering with an Austin nonprofit'}
@@ -67,6 +78,7 @@ export default function Projects() {
           '430 rescue and aid missions',
           '$1.5 million raised',
         ]}
+        video='AustinCold_Demo'
       >
         Launched a crisis-response web app in 72 hrs that mobilized 312
         volunteers, coordinated 430 rescue runs, and drove $1.5 M in donations
