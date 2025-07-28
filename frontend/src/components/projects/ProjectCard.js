@@ -11,7 +11,7 @@ export default function ProjectCard({
 }) {
   return (
     <div className='w-screen p-1 lg:p-8 box-border h-auto lg:h-screen min-h-screen'>
-      <div className='h-full w-full p-8 flex flex-col lg:flex-row gap-32'>
+      <div className='h-full w-full p-8 flex flex-col lg:flex-row gap-10 lg:gap-32'>
         {/* LEFT SECTION – text */}
         <div className='flex-1 flex flex-col max-w-[550px] md:min-w-[440px]'>
           {/* Tags */}
