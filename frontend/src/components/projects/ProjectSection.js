@@ -8,7 +8,7 @@ export default function Projects() {
     <div id='projects' className='w-full'>
       <ProjectCard
         tags={['WEB', 'ENTERPRISE', 'B2B']}
-        title={'DEPLOYABLE ARCHITECTURES'}
+        title={'DEPLOYABLE ARCHITECTURE STACKS'}
         subtitle={'Packaged automation for deploying cloud environments'}
         role={
           'Design lead in cross-functional team of 12 reporting directly to CEO'
