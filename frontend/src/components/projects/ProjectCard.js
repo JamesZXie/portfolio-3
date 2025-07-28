@@ -15,7 +15,7 @@ export default function ProjectCard({
         {/* LEFT SECTION – text */}
         <div className='flex-1 flex flex-col max-w-[550px] md:min-w-[440px]'>
           {/* Tags */}
-          <div className='flex flex-wrap gap-2 mb-4 text-[var(--secondary)]'>
+          <div className='flex flex-wrap gap-2 mb-2 text-[var(--secondary)]'>
             {tags.map((tag, i) => (
               <span key={i} className='font-mono text-[14px]'>
                 [{tag}]
