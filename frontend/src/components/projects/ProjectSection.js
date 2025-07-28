@@ -80,9 +80,11 @@ export default function Projects() {
         ]}
         video='AustinCold_Demo'
       >
-        Launched a crisis-response web app in 72 hrs that mobilized 312
-        volunteers, coordinated 430 rescue runs, and drove $1.5 M in donations
-        during the 2021 Texas winter storm.
+        Launched a crisis-response web app for underprivileged neighborhoods who
+        were receiving less help during the emergency situation. Over the course
+        of 72 hours, we mobilized 312 volunteers, coordinated 430 rescue runs,
+        and drove $1.5 M in donations during the 2021 Texas winter storm. Was
+        featured on CNN.
       </ProjectCard>
     </div>
   );
