@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 
-const LEFT_TEXT = "Hi,\nI'm James X.";
-const RIGHT_TEXT = 'A designer\nand coder.';
+const LEFT_TEXT = "Hi,\nI'm James Xie.";
+const RIGHT_TEXT = 'A designer\n(and coder)';
 
 export default function HomeTypeBanner() {
   const [leftDisplayed, setLeftDisplayed] = useState('');

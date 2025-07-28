@@ -4,14 +4,15 @@ import Button from './Button';
 import { ArrowSquareOut } from '@phosphor-icons/react/dist/icons/ArrowSquareOut';
 
 export default function ContactButton(props) {
-  const handleClick = () => {
-    window.location.href = 'mailto:james.zm.xie@gmail.com';
-    console.log('hi?');
-  };
-
   return (
-    <Button icon={<ArrowSquareOut />} onClick={handleClick} {...props}>
-      CONTACT
-    </Button>
+    <a
+      href='https://www.linkedin.com/in/jameszexie/'
+      target='_blank'
+      rel='noopener noreferrer'
+    >
+      <Button icon={<ArrowSquareOut />} {...props}>
+        LINKEDIN
+      </Button>
+    </a>
   );
 }
