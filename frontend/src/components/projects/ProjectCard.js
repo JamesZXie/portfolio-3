@@ -15,7 +15,7 @@ export default function ProjectCard({
         {/* LEFT SECTION – text */}
         <div className='flex-1 flex flex-col max-w-[550px] md:min-w-[440px]'>
           {/* Tags */}
-          <div className='flex flex-wrap gap-2 mb-4'>
+          <div className='flex flex-wrap gap-2 mb-4 text-[var(--secondary)]'>
             {tags.map((tag, i) => (
               <span key={i} className='font-mono text-[14px]'>
                 [{tag}]
@@ -30,20 +30,22 @@ export default function ProjectCard({
 
           {/* Role */}
           <div className='mt-6 font-sans text-[14px]'>
-            <div className='font-medium color-[var(--secondary)]'>Role:</div>
+            <div className='font-medium text-[var(--secondary)]'>Role:</div>
             <div className='font-regular text-[18px]'>{role}</div>
           </div>
 
           {/* Description */}
           <div className='mt-6 font-sans text-[14px]'>
-            <div className='font-medium'>Description:</div>
+            <div className='font-medium text-[var(--secondary)]'>
+              Description:
+            </div>
             <div className='font-regular text-[18px]'>{children}</div>
           </div>
 
           {/* Impact */}
           <div className='mt-4 font-sans text-[14px]'>
-            <span className='font-medium'>Impact:</span>
-            <ul className='mt-2 space-y-1'>
+            <span className='font-medium text-[var(--secondary)]'>Impact:</span>
+            <ul className='space-y-0'>
               {impact.map((item, i) => (
                 <li key={i} className='flex items-start gap-2 text-[18px]'>
                   -<span>{item}</span>
