@@ -26,7 +26,7 @@ export default function Projects() {
         on consultants for half a year. Drove adoption to make it the #1
         featured item on{' '}
         <a
-          className='color-[var(--color-amber-500)]'
+          className='color-[var(--color-amber-500)] break-words'
           href='https://cloud.ibm.com/catalog#highlights'
         >
           the IBM Cloud Catalog.

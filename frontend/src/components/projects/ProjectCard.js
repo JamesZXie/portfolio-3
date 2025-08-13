@@ -10,11 +10,9 @@ export default function ProjectCard({
   image,
 }) {
   return (
-    <section className='w-full py-8 lg:py-16'>
-      {/* max width container to prevent ultra‑wide stretch */}
+    <section className='w-full py-16'>
       <div className='mx-auto max-w-[1830px] px-4 sm:px-6 lg:px-8'>
-        {/* layout: stack on mobile, row on large; avoid forced 100vh on small screens */}
-        <div className='w-full h-auto lg:min-h-screen flex flex-col lg:flex-row gap-8 lg:gap-16'>
+        <div className='w-full h-auto flex flex-col lg:flex-row gap-8 lg:gap-16'>
           {/* LEFT SECTION – text */}
           <div className='flex-1 flex flex-col max-w-[650px] md:min-w-[440px] overflow-visible'>
             {/* Tags */}
