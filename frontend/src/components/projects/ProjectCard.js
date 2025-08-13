@@ -10,71 +10,82 @@ export default function ProjectCard({
   image,
 }) {
   return (
-    <div className='w-screen p-1 lg:p-8 box-border h-auto lg:h-screen min-h-screen'>
-      <div className='h-full w-full p-8 flex flex-col lg:flex-row gap-10 lg:gap-32'>
-        {/* LEFT SECTION – text */}
-        <div className='flex-1 flex flex-col max-w-[550px] md:min-w-[440px]'>
-          {/* Tags */}
-          <div className='flex flex-wrap gap-2 mb-2 text-[var(--secondary)]'>
-            {tags.map((tag, i) => (
-              <span key={i} className='font-mono text-[14px]'>
-                [{tag}]
-              </span>
-            ))}
-          </div>
-
-          {/* Title */}
-          <h2 className='font-sans font-medium text-[32px] mb-4 mt-0'>
-            {title}
-          </h2>
-
-          {/* Role */}
-          <div className='mt-6 font-sans text-[14px]'>
-            <div className='font-medium text-[var(--secondary)]'>Role:</div>
-            <div className='font-regular text-[18px]'>{role}</div>
-          </div>
-
-          {/* Description */}
-          <div className='mt-6 font-sans text-[14px]'>
-            <div className='font-medium text-[var(--secondary)]'>
-              Description:
-            </div>
-            <div className='font-regular text-[18px]'>{children}</div>
-          </div>
-
-          {/* Impact */}
-          <div className='mt-4 font-sans text-[14px]'>
-            <span className='font-medium text-[var(--secondary)]'>Impact:</span>
-            <ul className='space-y-0'>
-              {impact.map((item, i) => (
-                <li key={i} className='flex items-start gap-2 text-[18px]'>
-                  -<span>{item}</span>
-                </li>
+    <section className='w-full py-8 lg:py-16'>
+      {/* max width container to prevent ultra‑wide stretch */}
+      <div className='mx-auto max-w-[1830px] px-4 sm:px-6 lg:px-8'>
+        {/* layout: stack on mobile, row on large; avoid forced 100vh on small screens */}
+        <div className='w-full h-auto lg:min-h-screen flex flex-col lg:flex-row gap-8 lg:gap-16'>
+          {/* LEFT SECTION – text */}
+          <div className='flex-1 flex flex-col max-w-[650px] md:min-w-[440px] overflow-visible'>
+            {/* Tags */}
+            <div className='flex flex-wrap gap-2 mb-2 text-[var(--secondary)]'>
+              {tags.map((tag, i) => (
+                <span key={i} className='font-mono text-[14px] break-words'>
+                  [{tag}]
+                </span>
               ))}
-            </ul>
-          </div>
-        </div>
+            </div>
 
-        {/* RIGHT SECTION – placeholder carousel */}
-        {video ? (
-          <div className='inline-flex items-start justify-center overflow-hidden min-h-[300px] max-w-[1024px]'>
-            <div className='relative aspect-[963/764] bg-stone-800 text-white border border-[var(--secondary)] rounded-[35px] p-8  '>
-              <video
-                className='w-full h-full object-contain'
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source src={`/${video}.mp4`} type='video/mp4' />
-                Your browser does not support the video tag.
-              </video>
+            {/* Title */}
+            <h2 className='font-sans font-medium text-[clamp(1.5rem,4vw,2rem)] leading-tight mb-4 mt-0 break-words'>
+              {title}
+            </h2>
+
+            {/* Role */}
+            <div className='mt-6 font-sans text-[14px]'>
+              <div className='font-medium text-[var(--secondary)]'>Role:</div>
+              <div className='font-regular text-[18px] break-words'>{role}</div>
+            </div>
+
+            {/* Description */}
+            <div className='mt-6 font-sans text-[14px]'>
+              <div className='font-medium text-[var(--secondary)]'>
+                Description:
+              </div>
+              <div className='font-regular text-[18px] break-words hyphens-auto'>
+                {children}
+              </div>
+            </div>
+
+            {/* Impact */}
+            <div className='mt-4 font-sans text-[14px]'>
+              <span className='font-medium text-[var(--secondary)]'>
+                Impact:
+              </span>
+              <ul className='space-y-0'>
+                {impact.map((item, i) => (
+                  <li
+                    key={i}
+                    className='flex items-start gap-2 text-[18px] break-words'
+                  >
+                    -<span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-        ) : (
-          <div>hi</div>
-        )}
+
+          {/* RIGHT SECTION – media */}
+          {video ? (
+            <div className='flex-1 inline-flex items-start justify-center min-h-[300px]'>
+              <div className='relative w-full max-w-[1024px] aspect-[963/764] bg-stone-800 text-white border border-[var(--secondary)] rounded-[35px] p-4 sm:p-6 lg:p-8'>
+                <video
+                  className='w-full h-full object-contain'
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src={`/${video}.mp4`} type='video/mp4' />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          ) : (
+            <div className='flex-1' />
+          )}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

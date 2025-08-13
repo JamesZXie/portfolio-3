@@ -45,7 +45,7 @@ export default function HomeTypeBanner() {
   }, [leftDone]);
 
   return (
-    <div className='absolute inset-0 flex items-center justify-between w-full h-full pointer-events-none'>
+    <div className='inset-0 flex items-center justify-between max-w-[1830px] w-full h-full pointer-events-none'>
       <div className='pl-8 md:pl-[32px] flex-1 flex items-center'>
         <h1
           className='font-sans font-medium text-[clamp(1.5rem,4vw,64px)] text-[var(--secondary)] leading-tight select-none text-left whitespace-pre-line'

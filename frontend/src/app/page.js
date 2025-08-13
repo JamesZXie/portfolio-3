@@ -12,7 +12,7 @@ export default function Home() {
       <HomeButton />
       <Navigation />
       <div
-        className='flex px-[128px] h-full w-full items-center justify-center'
+        className='w-full flex px-[128px] h-full items-center align-center justify-center'
         id='home'
       >
         <HomeTypeBanner />

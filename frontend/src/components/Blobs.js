@@ -124,7 +124,11 @@ export default function Blobs() {
     >
       <Canvas
         camera={{ position: [0, 0, 1.8], fov: 50 }}
-        style={{ width: '100vw', height: '100vh', display: 'block' }}
+        style={{
+          width: '100vw',
+          height: '100vh',
+          display: 'block',
+        }}
         onPointerMove={handlePointerMove}
         onPointerOut={handlePointerOut}
       >
