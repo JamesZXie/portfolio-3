@@ -1,52 +1,63 @@
 @import 'tailwindcss';
 
+/* Specimen palette: warm paper, dense ink, one signal color. */
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --paper: #f3f1ec;
+  --paper-raised: #ebe8e1;
+  --ink: #141414;
+  --ink-muted: #5f5d58;
+  --rule: #d4d0c6;
+  --signal: #e2401f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f0f0e;
+    --paper-raised: #181816;
+    --ink: #ecebe6;
+    --ink-muted: #9a978f;
+    --rule: #2c2b28;
+    --signal: #ff5a3a;
+  }
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-rule: var(--rule);
+  --color-signal: var(--signal);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --primary: var(--color-white);
-  --primary-hover: var(--color-stone-100);
-  --secondary: var(--color-stone-300);
-  --secondary-hover: var(--color-pewter);
-  --accent: var(--color-sunset);
-  --accent-hover: var(--color-dawn);
-  --background: var(--color-background);
-  --background-hover: var(--color-stone-800);
-  --foreground: var(--color-dove);
-  --foreground-hover: var(--color-white);
-  --card: var(--color-charcoal);
-  --border: var(--color-umbra);
-  --input: var(--color-fog);
-  --scroll-track-color: var(--color-charcoal);
-  --scroll-thumb-color: var(--color-jet);
+  --font-display: var(--font-instrument-serif);
 }
 
-.html {
+html {
   scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
 }
 
-@keyframes slideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+::selection {
+  background: var(--signal);
+  color: var(--paper);
 }
-.animate-slideDown {
-  animation: slideDown 0.3s ease-out;
+
+/* Faint measurement grid used behind heroes and media placeholders. */
+.graph-paper {
+  background-image:
+    linear-gradient(to right, var(--rule) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--rule) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.label {
+  font-family: var(--font-geist-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
