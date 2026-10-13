@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Licensed font files: served by the site but not redistributed in this public repo.
+/public/fonts/Lastik*

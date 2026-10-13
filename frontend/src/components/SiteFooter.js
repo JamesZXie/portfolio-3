@@ -7,7 +7,7 @@ export default function SiteFooter() {
       <Container className='grid gap-8 py-12 md:grid-cols-12'>
         <p className='font-display text-4xl leading-tight md:col-span-7 md:text-5xl'>
           Have something hard to make clear?{' '}
-          <a href={`mailto:${site.email}`} className='italic text-signal underline-offset-4 hover:underline'>
+          <a href={`mailto:${site.email}`} className='text-signal underline-offset-4 hover:underline'>
             Write to me.
           </a>
         </p>
@@ -21,7 +21,7 @@ export default function SiteFooter() {
       </Container>
       <Container className='label flex justify-between border-t border-rule py-4 text-ink-muted'>
         <span>© {new Date().getFullYear()} {site.name}</span>
-        <span>Set in Instrument Serif &amp; Geist</span>
+        <span>Set in Lastik &amp; Manrope</span>
       </Container>
     </footer>
   );

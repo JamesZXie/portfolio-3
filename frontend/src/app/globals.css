@@ -1,5 +1,17 @@
 @import 'tailwindcss';
 
+/* Lastik is licensed for web serving via @font-face (WOFF/WOFF2 only) and is
+   not committed to this public repo; see public/fonts in .gitignore. Without
+   the files, display text falls back to Manrope. */
+@font-face {
+  font-family: 'Lastik';
+  src:
+    url('/fonts/LastikFreeFont-Free.woff2') format('woff2'),
+    url('/fonts/LastikFreeFont-Free.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
 /* Specimen palette: warm paper, dense ink, one signal color. */
 :root {
   --paper: #f3f1ec;
@@ -28,9 +40,8 @@
   --color-ink-muted: var(--ink-muted);
   --color-rule: var(--rule);
   --color-signal: var(--signal);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-instrument-serif);
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
+  --font-display: 'Lastik', var(--font-manrope), serif;
 }
 
 html {
@@ -56,8 +67,10 @@ body {
 }
 
 .label {
-  font-family: var(--font-geist-mono);
+  font-family: var(--font-manrope), system-ui, sans-serif;
   font-size: 0.6875rem;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }

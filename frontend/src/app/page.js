@@ -11,7 +11,7 @@ export default function Home() {
         <Container className='relative grid gap-10 pb-16 pt-24 md:grid-cols-12 md:pb-24 md:pt-40'>
           <h1 className='font-display text-5xl leading-[0.95] tracking-tight md:col-span-10 md:text-8xl'>
             {site.intro.split('. ')[0]}.{' '}
-            <em className='text-ink-muted'>{site.intro.split('. ').slice(1).join('. ')}</em>
+            <em className='not-italic text-ink-muted'>{site.intro.split('. ').slice(1).join('. ')}</em>
           </h1>
           <dl className='label grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 text-ink-muted md:col-span-4'>
             <dt>Now</dt><dd className='text-ink'>{site.now}</dd>

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Container from '@/components/Container';
 import MediaFrame from '@/components/MediaFrame';
+import Blocks from '@/components/Blocks';
 import { studies, getStudy } from '@/content/work';
 
 export function generateStaticParams() {
@@ -51,7 +52,7 @@ export default async function CaseStudy({ params }) {
       </Container>
 
       <Container>
-        <MediaFrame media={study.cover} index='1' aspect='aspect-[16/9]' />
+        <MediaFrame media={study.cover} aspect='aspect-[16/9]' />
       </Container>
 
       <Container className='mt-20 grid gap-10 md:grid-cols-12'>
@@ -67,13 +68,12 @@ export default async function CaseStudy({ params }) {
           </ol>
         </nav>
         <div className='flex flex-col gap-20 md:col-span-8 md:col-start-5'>
-          {study.sections.map((s, n) => (
+          {study.sections.map((s) => (
             <section key={s.id} id={s.id} className='scroll-mt-20'>
               <h2 className='font-display text-4xl md:text-5xl'>{s.heading}</h2>
-              <div className='mt-6 flex max-w-prose flex-col gap-4 text-lg leading-relaxed'>
-                {s.body.map((p, k) => <p key={k}>{p}</p>)}
+              <div className='mt-6 flex flex-col gap-10'>
+                <Blocks blocks={s.blocks} />
               </div>
-              {s.media && <MediaFrame media={s.media} index={String(n + 2)} className='mt-10' />}
             </section>
           ))}
         </div>
