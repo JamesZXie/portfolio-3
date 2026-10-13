@@ -24,7 +24,7 @@ export default function Blocks({ blocks }) {
             {b.items.map((s) => (
               <div key={s.label} className='flex flex-col gap-2 bg-paper p-5'>
                 <dt className='order-2 label text-ink-muted'>{s.label}</dt>
-                <dd className='font-display text-5xl text-signal'>{s.value}</dd>
+                <dd className='font-display text-4xl font-semibold tracking-tight text-signal'>{s.value}</dd>
               </div>
             ))}
           </dl>
@@ -32,7 +32,7 @@ export default function Blocks({ blocks }) {
       case 'quote':
         return (
           <blockquote key={i} className='border-l-2 border-signal pl-6'>
-            <p className='font-display text-3xl leading-snug md:text-4xl'>{b.body}</p>
+            <p className='font-display text-2xl font-medium leading-snug tracking-tight md:text-3xl'>{b.body}</p>
             {b.cite && <footer className='label mt-4 text-ink-muted'>{b.cite}</footer>}
           </blockquote>
         );

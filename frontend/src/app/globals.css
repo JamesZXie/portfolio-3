@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-/* Lastik: display face. One weight, no italic. */
+/* Lastik: secondary face for small marks only (name, indices). One weight. */
 @font-face {
   font-family: 'Lastik';
   src:
@@ -39,7 +39,8 @@
   --color-rule: var(--rule);
   --color-signal: var(--signal);
   --font-sans: var(--font-manrope), system-ui, sans-serif;
-  --font-display: 'Lastik', var(--font-manrope), serif;
+  --font-display: var(--font-manrope), system-ui, sans-serif;
+  --font-mark: 'Lastik', var(--font-manrope), serif;
 }
 
 html {
@@ -70,5 +71,13 @@ body {
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* The only place Lastik appears: small identifying marks, used sparingly. */
+.mark {
+  font-family: 'Lastik', var(--font-manrope), serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }

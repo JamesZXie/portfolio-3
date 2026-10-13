@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div className='mx-auto grid max-w-[1600px] gap-12 px-4 pb-32 pt-8 md:px-8 lg:grid-cols-[minmax(280px,360px)_1fr] lg:gap-16'>
       <aside className='flex flex-col gap-6 lg:sticky lg:top-8 lg:h-[calc(100vh-4rem)]'>
-        <h1 className='label flex items-center gap-2'>
+        <h1 className='mark flex items-center gap-2'>
           <span className='inline-block size-2 bg-signal' />
           {site.name}
         </h1>
