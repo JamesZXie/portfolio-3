@@ -1,8 +1,6 @@
 @import 'tailwindcss';
 
-/* Lastik is licensed for web serving via @font-face (WOFF/WOFF2 only) and is
-   not committed to this public repo; see public/fonts in .gitignore. Without
-   the files, display text falls back to Manrope. */
+/* Lastik: display face. One weight, no italic. */
 @font-face {
   font-family: 'Lastik';
   src:
