@@ -5,6 +5,8 @@ const study = {
     'The public website for Mirror Physics and Axon, its drug discovery agent. Instead of describing the product, the site replays real Axon sessions inside a working copy of the app, with live 3D molecules, so scientists can judge the agent by its actual work.',
   role: 'Design and engineering',
   year: '2026',
+  category: 'Brand & web',
+  period: 'Dec 2025–Present',
   team: 'Lead designer and front-end engineer, with a teammate on early product pages',
   timeline: 'December 2025 to October 2026, ongoing',
   outcome: [

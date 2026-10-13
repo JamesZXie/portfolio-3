@@ -1,6 +1,5 @@
 import { Manrope } from 'next/font/google';
-import SiteHeader from '@/components/SiteHeader';
-import SiteFooter from '@/components/SiteFooter';
+import BlurFade from '@/components/BlurFade';
 import './globals.css';
 
 const manrope = Manrope({ variable: '--font-manrope', subsets: ['latin'] });
@@ -16,9 +15,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${manrope.variable} font-sans antialiased`}
       >
-        <SiteHeader />
         <main>{children}</main>
-        <SiteFooter />
+        <BlurFade />
       </body>
     </html>
   );

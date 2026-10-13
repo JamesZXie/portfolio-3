@@ -6,6 +6,8 @@ const study = {
     'A desktop app where scientists hand computational chemistry to an AI agent, and watch, steer and check its work as it runs.',
   role: 'Design lead, design engineer',
   year: '2026',
+  category: 'Product',
+  period: 'Jan 2026–Present',
   team: 'Mirror Physics. Me on design and front end, alongside a small team of engineers',
   timeline: 'January to October 2026',
   outcome: [

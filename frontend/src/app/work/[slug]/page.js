@@ -28,8 +28,14 @@ export default async function CaseStudy({ params }) {
   ];
 
   return (
-    <article>
-      <Container className='grid gap-10 pb-12 pt-16 md:grid-cols-12 md:pt-24'>
+    <article className='pb-32'>
+      <Container className='pt-8'>
+        <Link href='/' className='label inline-flex items-center gap-2 text-ink-muted hover:text-ink'>
+          <span className='inline-block size-2 bg-signal' />
+          James Xie
+        </Link>
+      </Container>
+      <Container className='grid gap-10 pb-12 pt-16 md:grid-cols-12 md:pt-20'>
         <div className='md:col-span-8'>
           <p className='label mb-6 text-signal'>
             {String(i + 1).padStart(2, '0')} / {String(studies.length).padStart(2, '0')}

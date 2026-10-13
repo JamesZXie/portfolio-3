@@ -11,6 +11,8 @@ const template = {
   summary: 'One or two sentences: what it is and why it mattered.',
   role: 'Design lead', // Short; shown on the home index.
   year: '2026',
+  category: 'Product', // Home grid caption: '<category>, <period>'.
+  period: 'Jan 2026–Present',
   team: 'Who you worked with, briefly',
   timeline: 'e.g. 6 months',
   outcome: ['One-line result', 'Another result'], // Shown in the meta block.
