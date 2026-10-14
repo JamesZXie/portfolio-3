@@ -10,24 +10,24 @@
   font-display: swap;
 }
 
-/* Specimen palette: warm paper, dense ink, one signal color. */
+/* Greyscale palette: neutral paper and ink; signal is the strongest ink. */
 :root {
-  --paper: #f3f1ec;
-  --paper-raised: #ebe8e1;
+  --paper: #f2f2f2;
+  --paper-raised: #e8e8e8;
   --ink: #141414;
-  --ink-muted: #5f5d58;
-  --rule: #d4d0c6;
-  --signal: #e2401f;
+  --ink-muted: #5e5e5e;
+  --rule: #d2d2d2;
+  --signal: #141414;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #0f0f0e;
-    --paper-raised: #181816;
-    --ink: #ecebe6;
-    --ink-muted: #9a978f;
-    --rule: #2c2b28;
-    --signal: #ff5a3a;
+    --paper: #0f0f0f;
+    --paper-raised: #181818;
+    --ink: #ececec;
+    --ink-muted: #999999;
+    --rule: #2c2c2c;
+    --signal: #ececec;
   }
 }
 

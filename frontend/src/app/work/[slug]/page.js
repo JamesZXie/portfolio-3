@@ -88,7 +88,7 @@ export default async function CaseStudy({ params }) {
       <Container className='mt-32'>
         <Link href={`/work/${next.slug}`} className='group block border-t border-rule pt-6'>
           <span className='label text-ink-muted'>Next</span>
-          <span className='mt-2 block font-display text-4xl font-semibold tracking-tight group-hover:text-signal md:text-6xl'>
+          <span className='mt-2 block font-display text-4xl font-semibold tracking-tight group-hover:text-ink-muted md:text-6xl'>
             {next.title} →
           </span>
         </Link>
