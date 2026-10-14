@@ -1,28 +1,22 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Manrope } from 'next/font/google';
+import BlurFade from '@/components/BlurFade';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+const manrope = Manrope({ variable: '--font-manrope', subsets: ['latin'] });
 
 export const metadata = {
-  title: 'EXI',
-  description: 'Design work by James Xie, a designer and developer.',
+  title: { default: 'James Xie', template: '%s · James Xie' },
+  description: 'Selected work by James Xie, designer and engineer.',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${manrope.variable} font-sans antialiased`}
       >
-        {children}
+        <main>{children}</main>
+        <BlurFade />
       </body>
     </html>
   );
