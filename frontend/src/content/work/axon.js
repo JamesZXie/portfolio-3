@@ -9,7 +9,7 @@ const study = {
   category: 'Product',
   period: 'Jan 2026–Present',
   team: 'Mirror Physics. Me on design and front end, alongside a small team of engineers',
-  timeline: 'January to October 2026',
+  timeline: '2026, ongoing',
   outcome: [
     'Shipped on macOS, Windows and Linux, in English and Chinese',
     'Moved the whole app onto Fractal tokens, with full dark mode',
@@ -17,8 +17,8 @@ const study = {
   ],
   cover: {
     image: '/work/axon/cover.webp',
-    alt: 'Axon workspace: a chat about a lysozyme molecular dynamics simulation on the left, the generated Python analysis file open in a viewer, and a progress checklist on the right.',
-    caption: 'The Axon workspace: conversation, artifact viewer, and the agent’s plan side by side.',
+    alt: 'The Axon app icon on a near-black background, lit from behind by soft blue, violet and orange light.',
+    caption: 'The Axon app icon',
   },
   sections: [
     {
@@ -29,13 +29,13 @@ const study = {
           type: 'text',
           body: [
             'Axon is the product Mirror Physics builds for computational chemists. You describe a problem in plain language, such as setting up a docking sweep or analysing a molecular dynamics trajectory, and an agent plans the work, writes the code, runs it on your machine or in cloud sandboxes, and reports back with files, plots and structures.',
-            'When I joined in January the agent was capable but the app read like a developer console. Tool calls dumped raw output, every screen had its own colours, and scientists had no easy way to tell what the agent was doing, what it had touched, or whether its conclusions were grounded. My job was to make that work legible: something a chemist could trust enough to leave running, and share with a colleague afterwards.',
+            'When I joined, the agent was capable but the app read like a developer console. Tool calls dumped raw output, every screen had its own colours, and scientists had no easy way to tell what the agent was doing, what it had touched, or whether its conclusions were grounded. My job was to make that work legible: something a chemist could trust enough to leave running, and share with a colleague afterwards.',
           ],
         },
         {
           type: 'stats',
           items: [
-            { value: '10 mo', label: 'From first commit to the October release' },
+            { value: '10 mo', label: 'From first commit to the latest release' },
             { value: '3', label: 'Desktop platforms from one codebase' },
             { value: '50+', label: 'Storybook files used as the design surface' },
           ],

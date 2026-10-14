@@ -8,7 +8,7 @@ const study = {
   category: 'Design system',
   period: 'Mar 2026–Present',
   team: 'Solo lead at Mirror Physics, with a teammate on data visualization',
-  timeline: 'March to October 2026, ongoing',
+  timeline: '2026, ongoing',
   outcome: [
     '217 custom icons replaced a generic library',
     '39 shipped React components',

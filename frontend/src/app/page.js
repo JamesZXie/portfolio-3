@@ -4,7 +4,7 @@ import { site } from '@/content/site';
 import { studies } from '@/content/work';
 
 // Cover shapes alternate so the two columns stagger.
-const aspects = ['aspect-[4/3]', 'aspect-[4/5]', 'aspect-[4/5]', 'aspect-[4/3]'];
+const aspects = ['aspect-[4/5]', 'aspect-[4/3]', 'aspect-[4/3]', 'aspect-[4/5]'];
 
 function Cover({ media }) {
   const cls = 'h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]';
@@ -17,7 +17,7 @@ function Cover({ media }) {
 export default function Home() {
   return (
     <div className='mx-auto grid max-w-[1600px] gap-12 px-4 pb-32 pt-8 md:px-8 lg:grid-cols-[minmax(280px,360px)_1fr] lg:gap-16'>
-      <aside className='flex flex-col gap-6 lg:sticky lg:top-8 lg:h-[calc(100vh-4rem)]'>
+      <aside className='flex flex-col gap-6 lg:sticky lg:top-8 lg:self-start'>
         <h1 className='mark flex items-center gap-2'>
           <span className='inline-block size-2 bg-signal' />
           {site.name}

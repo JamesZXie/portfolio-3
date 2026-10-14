@@ -8,16 +8,16 @@ const study = {
   category: 'Brand & web',
   period: 'Dec 2025–Present',
   team: 'Lead designer and front-end engineer, with a teammate on early product pages',
-  timeline: 'December 2025 to October 2026, ongoing',
+  timeline: '2025 to now, ongoing',
   outcome: [
     '22 real agent sessions replayed in the browser',
     'One color palette shared with the app and design system',
     'Light and dark themes on every page',
   ],
   cover: {
-    video: '/work/mirror-website/cover.mp4',
-    alt: 'The homepage demo: a copy of the Axon app switching between sessions on protein binding sites, a membrane simulation, reduction potentials and patent compounds.',
-    caption: 'The homepage demo, clicking through real sessions',
+    image: '/work/mirror-website/home-dark.webp',
+    alt: 'The homepage in the dark theme: the headline Drug design intelligence above the Axon interface showing the TSHR receptor.',
+    caption: 'The live homepage, in the dark theme',
   },
   sections: [
     {
@@ -29,7 +29,31 @@ const study = {
           body: [
             'Axon is an AI agent for drug discovery. It runs cheminformatics, physics-based simulation and machine learning tools on behalf of medicinal chemists and computational scientists. The website had one job: get those scientists to try it.',
             'That audience has heard every AI claim already. Most sites in the space look the same: a gradient, a headline about accelerating discovery, a stock render of a molecule. A scientist reading one learns nothing about whether the tool can dock a ligand or read a patent. So the site had to stop describing Axon and start showing it work.',
-            'The first version, shipped in January, was a conventional marketing site: hero, evidence table, a D3 chart, FAQ. It got us live. Everything after that was about replacing claims with evidence.',
+            'The first version was a conventional marketing site: hero, evidence table, a D3 chart, FAQ. It got us live. Everything after that was about replacing claims with evidence.',
+          ],
+        },
+        {
+          type: 'media',
+          image: '/work/mirror-website/old-home.webp',
+          alt: 'The first version of the homepage: the headline An interactive agent to accelerate drug discovery over a pale dotted gradient, with a static Axon screenshot of a GLP-1 receptor below.',
+          caption: 'The first homepage, with a static picture of the product',
+          aspect: 'aspect-[8/5]',
+        },
+        {
+          type: 'gallery',
+          items: [
+            {
+              image: '/work/mirror-website/old-capabilities.webp',
+              alt: 'A pink capability card from the first site, reading Industry-grade methods, orchestrated seamlessly, beside a mock binding affinity chart.',
+              caption: 'Pastel capability cards',
+              aspect: 'aspect-[8/5]',
+            },
+            {
+              image: '/work/mirror-website/old-enterprise.webp',
+              alt: 'The first enterprise page: Designed for enterprise deployments, beside a pale blue isometric illustration of a server on stacked rings.',
+              caption: 'Isometric illustrations for enterprise',
+              aspect: 'aspect-[8/5]',
+            },
           ],
         },
       ],
@@ -41,7 +65,7 @@ const study = {
         {
           type: 'text',
           body: [
-            'In March I replaced the homepage video with the interface itself. The hero is a faithful copy of Axon’s layout, with sessions on the left, the conversation in the middle, the artifact viewer and the working files on the right, filled with real data. Visitors click between sessions the same way they would in the app.',
+            'Next, I replaced the homepage video with the interface itself. The hero is a faithful copy of Axon’s layout, with sessions on the left, the conversation in the middle, the artifact viewer and the working files on the right, filled with real data. Visitors click between sessions the same way they would in the app.',
             'Molecules render in Mol*, the same viewer scientists already use, loading the actual structure files the agent produced. You can rotate the TSHR receptor and see the pockets the agent found, or watch a GLP-1 receptor sit in a lipid membrane it built. On mobile I dropped the video fallback too and shipped a real viewer, because a recording of a molecule is exactly the stock image we were trying to avoid.',
           ],
         },
@@ -157,18 +181,6 @@ const study = {
           body: 'Building the layer between intelligence and medicine.',
           cite: 'Company page headline',
         },
-        {
-          type: 'text',
-          body: [
-            'The blog’s thumbnail art and side ornaments are crystal lattices made by a generator from the design system. It is deterministic from a seed, so any illustration can be regenerated exactly or varied on purpose, instead of being redrawn by hand.',
-          ],
-        },
-        {
-          type: 'media',
-          image: '/work/mirror-website/blog.webp',
-          alt: 'The blog page with a featured post on SOC 2 and a thumbnail of translucent hexagonal crystal shapes.',
-          caption: 'Generated lattice art on the blog',
-        },
       ],
     },
     {
@@ -184,9 +196,9 @@ const study = {
         },
         {
           type: 'media',
-          image: '/work/mirror-website/home-dark.webp',
-          alt: 'The homepage in the dark theme: the headline Drug design intelligence above the Axon interface showing the TSHR receptor.',
-          caption: 'The homepage in the dark theme',
+          video: '/work/mirror-website/cover.mp4',
+          alt: 'The homepage demo: a copy of the Axon app switching between sessions on protein binding sites, a membrane simulation, reduction potentials and patent compounds.',
+          caption: 'The homepage demo, clicking through real sessions',
         },
       ],
     },
