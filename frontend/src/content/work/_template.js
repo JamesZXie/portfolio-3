@@ -17,6 +17,8 @@ const template = {
   timeline: 'e.g. 6 months',
   outcome: ['One-line result', 'Another result'], // Shown in the meta block.
   cover: { image: '/work/example/cover.webp', alt: 'Describe the image', caption: 'Short caption' },
+  // Optional: a different image for the case-study banner (defaults to cover). Shown at 16:10.
+  hero: { image: '/work/example/hero.webp', alt: 'Describe the image', caption: 'Short caption' },
 
   // Sections become the page body and the sticky table of contents.
   // Each section is a heading plus an ordered list of blocks.

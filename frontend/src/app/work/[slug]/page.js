@@ -58,7 +58,7 @@ export default async function CaseStudy({ params }) {
       </Container>
 
       <Container>
-        <MediaFrame media={study.cover} aspect='aspect-[16/9]' />
+        <MediaFrame media={study.hero ?? study.cover} aspect='aspect-[16/10]' />
       </Container>
 
       <Container className='mt-20 grid gap-10 md:grid-cols-12'>

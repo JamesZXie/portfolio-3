@@ -20,6 +20,11 @@ const study = {
     alt: 'The Axon app icon on a near-black background, lit from behind by soft blue, violet and orange light.',
     caption: 'The Axon app icon',
   },
+  hero: {
+    image: '/work/axon/workspace-dark.webp',
+    alt: 'The Axon workspace: a chat about a lysozyme molecular dynamics simulation on the left, the generated Python analysis file open in a viewer, and the agent’s progress checklist on the right.',
+    caption: 'The Axon workspace: conversation, artifact viewer and the agent’s plan side by side',
+  },
   sections: [
     {
       id: 'context',
@@ -114,10 +119,11 @@ const study = {
           ],
         },
         {
-          type: 'media',
-          image: '/work/axon/workspace-dark.webp',
-          alt: 'The Axon workspace in dark mode with the conversation, code viewer and progress checklist.',
-          caption: 'The workspace in dark mode. Semantic tokens remap; the primitives stay the same.',
+          type: 'gallery',
+          items: [
+            { image: '/work/axon/workspace-light.webp', alt: 'The Axon workspace in light mode with the conversation, code viewer and progress checklist.', caption: 'Light', aspect: 'aspect-[16/10]' },
+            { image: '/work/axon/workspace-dark.webp', alt: 'The same workspace in dark mode.', caption: 'Dark. Semantic tokens remap; the primitives stay the same.', aspect: 'aspect-[16/10]' },
+          ],
         },
       ],
     },
