@@ -5,7 +5,7 @@ const study = {
     'A design system written for an AI agent to read. Fractal turns design decisions into routed evidence that Axon loads before it builds an interface, a chart or a report, then ships the result as React components, an icon set and a test bench that scores what the agent makes.',
   role: 'Design and engineering',
   year: '2026',
-  category: 'Design system',
+  category: 'Design agents & design system',
   period: 'Mar 2026–Present',
   team: 'Solo lead at Mirror Physics, with a teammate on data visualization',
   timeline: '2026, ongoing',
